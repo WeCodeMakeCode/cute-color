@@ -14,6 +14,13 @@ namespace cuteColor{
     /**
      * returns a random color 0-15 excluding up to 3 colors
      */
+    /**
+     * returns a colors array
+     */
+    //% blockId=colorsArray
+    export function colorsArray(): number[]{
+        return [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    }
     //% blockId=randomColor
     //% block=" random color || excluding colors: %c1 %c2 %c3"
     //% inlineInputMode=inline
