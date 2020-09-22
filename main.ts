@@ -24,33 +24,18 @@ namespace cuteColor{
     //% c2.min=0 c2.max=15 c2.defl=15
     //% c3.min=0 c3.max=15 c3.defl=0
     //% help=circle/random-color
-    export function randomColor(n:number, c1:number , c2: number = 15, c3:number ): number{
-        switch(n) { 
-            case 0: {    
-                c1 = -1
-                c2 = -1
-                c3 = -1
-                break; 
-            }
-            case 1: { 
-                c2 = -1
-                c3 = -1
-                break; 
-            } 
-            case 2: { 
-                c3 = -1
-                break; 
-            } 
-            default: { 
-                break; 
-            } 
-        } 
-        let clr = randint(0, 15)
-        // c1 or c2 or c3 = -1 will not be color
-        while(clr == c1 || clr == c2 || clr == c3) { 
-            clr = randint(0, 15)
+    export function randomColor(c1:number = null, c2: number = null, c3:number = null ): number{
+        let c:number[] = []
+        // all colors to c array
+        for (let i = 0; i < 16; i++) {
+            c[i] = i
         }
-        return clr
+        // remove colors to be excluded
+        if (c1 != null && (c.indexOf(c1) > -1)) c.removeElement(c.indexOf(c1))
+        if (c2 != null && (c.indexOf(c2) > -1)) c.removeElement(c.indexOf(c2))
+        if (c3 != null && (c.indexOf(c3) > -1)) c.removeElement(c.indexOf(c3))
+
+        return Math.pickRandom(c)
     }
 }
 
