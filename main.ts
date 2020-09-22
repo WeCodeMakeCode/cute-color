@@ -20,6 +20,14 @@ namespace cuteColor{
     export function colorsArray(): number[]{
         return [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     }
+        /**
+     * returns a color names array
+     */
+    //% blockId=colorNamesArray
+    //% block
+    export function colorNamesArray(): string[]{
+        return ["transparent","white","red","pink","orange","yellow","teal","green","blue","light blue","purple","light purple","dark purple","tan","brown","black"]
+    }
     /**
      * returns a random color 0-15 excluding up to 3 colors
      */
