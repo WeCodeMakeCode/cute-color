@@ -11,7 +11,15 @@ namespace cuteColor{
     export function colorIndexPicker(color:number){
         return color
     }
-
+    /**
+     * returns a sprit arrau of colors
+     */
+    //% blockId=spriteArray
+    //% block
+    export function colorsSpriteArray(): Sprite[]{
+        let s:Sprite[] = []
+        return s
+    }
     /**
      * returns a colors array
      */
