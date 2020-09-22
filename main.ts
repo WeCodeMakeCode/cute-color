@@ -20,9 +20,9 @@ namespace cuteColor{
     //% block=" random color || excluding %n colors: %c1 %c2 %c3"
     //% inlineInputMode=inline
     //% n.min=0 n.max=3 n.defl=2
-    //% c1.min=0 c1.max=15 //c1.defl=0
-    //% c2.min=0 c2.max=15 //c2.defl=15
-    //% c3.min=0 c3.max=15 // c3.defl=0
+    //% c1.min=0 c1.max=15 c1.defl=null
+    //% c2.min=0 c2.max=15 //c2.defl=null
+    //% c3.min=0 c3.max=15 // c3.defl=null
     //% help=circle/random-color
     export function randomColor(c1:number = null, c2: number = null, c3:number = null ): number{
         let c:number[] = []
