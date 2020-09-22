@@ -19,11 +19,8 @@ namespace cuteColor{
     //% block=" random color || excluding %n colors: %c1 %c2 %c3"
     //% inlineInputMode=inline
     //% n.min=0 n.max=3 n.defl=2
-    //% c1.min=0 c1.max=15 c1.defl="transparent""
-    //% c2.min=0 c2.max=15 //c2.defl="color to omit""
-    //% c3.min=0 c3.max=15 // c3.defl="color to omit"
     //% help=circle/random-color
-    export function randomColor(c1:string = "", c2:string, c3:string ): number{
+    export function randomColor(c1:string = "color to omit", c2:string = "color to omit", c3:string = "color to omit"): number{
         let cInts =[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
         let cIntsText =["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
         let cNamesText =["transparent","white","red","pink","orange","yellow","teal","green","blue","light blue","purple","light purple","dark purple","tan","brown","black"]
