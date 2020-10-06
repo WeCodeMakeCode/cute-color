@@ -1,6 +1,7 @@
     /**
      * todo
      */
+//% weight=100 color=#008080 
 namespace cuteColor{
     /**
      * Returns selected color
