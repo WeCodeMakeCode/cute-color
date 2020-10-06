@@ -14,16 +14,16 @@ namespace cuteColor{
     /**
      * returns a sprit arrau of colors
      */
-    //% blockId=spriteArray
+    //% blockId=colorsSpriteArray
     //% blockSetVariable=mySprites
-    //% block
-    export function colorsSpriteArray(): Sprite[]{  // add excluded colors
+    //% block "create sprites of width %width and height %height with colors %colorsList"
+    export function colorsSpriteArray(width:number=8, height:number=8, colorNumbers: number[]): Sprite[]{  // add excluded colors
         let spriteList:Sprite[] = []
-        let cs = new CuteColor()
-        let colorNumbers = cs.colorNumbers
+        //let cs = new CuteColor()
+        //let colorNumbers = cs.colorNumbers
         
         for (let i = 0; i < colorNumbers.length; i++) {
-            let newImage = image.create(8, 8)
+            let newImage = image.create(width, height)
             newImage.fill(i)
             let mySprite = sprites.create(newImage)
             spriteList.push(mySprite)
@@ -58,14 +58,14 @@ namespace cuteColor{
     }
     //% blockId=colorNumberFromName
     //% blockSetVariable=myColorNumber
-    //% block find color number form color name %colorName
+    //% block "find color number form color name %colorName"
     export function colorNumberFromName(colorName:string):number {
         let cs = new CuteColor()
         return cs.colorNames.indexOf(colorName)
     }
     //% blockId=colorNameFromNumber
     //% blockSetVariable=myColorName
-    //% block find color name from color number %colorNumber
+    //% block "find color name from color number %colorNumber"
     export function colorNameFromNumber(colorNumber:number):string {
         let cs = new CuteColor()
         return cs.colorNames[colorNumber]
@@ -80,27 +80,16 @@ namespace cuteColor{
             this._colorNumbers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
             // do exclusions here
         }
-        //% blockId=colorNamesArray
-        //% blockSetVariable=myColorNamesArray
-        //% block
         get colorNames(): string[] {
             return this._colorNames
         }
-        //% blockId=colorNumbersArray
-        //% blockSetVariable=myColorNumbersArray
-        //% block
         get colorNumbers(): number[] {
             return this._colorNumbers
         }
-        //% blockId=colorNumbersArray
-        //% blockSetVariable=myColorNumbersArray
-        //% block
         get randomizedColorNumbers(): number[] {
+            // TO DO 
             return this._colorNumbers
         }
-        //% blockId=excludeColorNumber
-        //% blockSetVariable=myBoolean
-        //% block %c
         public excludeColorNumber(c:number): boolean {
             let i = this._colorNumbers.indexOf(c)
             if (i > -1) {
@@ -109,9 +98,6 @@ namespace cuteColor{
                 return true
             } else return false
         }
-        //% blockId=excludeColorName
-        //% blockSetVariable=myBoolean
-        //% block %cName
         public excludeColorName(cName:string): boolean {
             let i = this._colorNames.indexOf(cName) 
             if ( i > -1) {
