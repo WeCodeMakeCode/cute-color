@@ -17,11 +17,10 @@ namespace cuteColor{
     //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
     //% block "list of sprites  with colors %colorNumberLists || of width %width and height %height"
-    //% width.min=1 width.max=160 width.defl=16
-    //% height.min=1 height.max=140 height.defl=16
-    export function colorsSpriteList(width:number=8, height:number=8, colorNumberLists: number[]): Sprite[]{ 
+    export function colorsSpriteList( colorNumberLists: number[], width:number=8, height:number=8): Sprite[]{ 
         let spriteList:Sprite[] = []
-        
+    // //% width.min=1 width.max=160 width.defl=16
+    // //% height.min=1 height.max=140 height.defl=16
         for (let i = 0; i < colorNumberLists.length; i++) {
             let newImage = image.create(width, height)
             newImage.fill(colorNumberLists[i])
@@ -32,6 +31,7 @@ namespace cuteColor{
         return spriteList
     }
     //% blockId=spriteColor
+    //% blockSetVariable=mySpriteColor
     //% block="sprite color of sprite %s=mySprite"
     export function spriteColor(s:Sprite):number {
         if(s.data["sprite color"] != null ){
@@ -66,14 +66,14 @@ namespace cuteColor{
     }
     //% blockId=colorNumberFromName
     //% blockSetVariable=myColorNumber
-    //% block "find color number form color name %colorName"
+    //% block "color number of color name %colorName"
     export function colorNumberFromName(colorName:string):number {
         let cs = new CuteColor()
         return cs.colorNames.indexOf(colorName)
     }
     //% blockId=colorNameFromNumber
     //% blockSetVariable=myColorName
-    //% block "find color name from color number %colorNumber"
+    //% block "color name of color number %colorNumber"
     export function colorNameFromNumber(colorNumber:number):string {
         let cs = new CuteColor()
         return cs.colorNames[colorNumber]
