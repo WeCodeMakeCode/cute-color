@@ -33,7 +33,7 @@ namespace cuteColor{
     }
     //% blockId=spriteColor
     //% blockSetVariable=mySpriteColor
-    //% block="sprite color of sprite %s(mySprite)
+    //% block="sprite color of sprite %s(mySprite)"
     export function spriteColor(s:Sprite):number {
         if(s.data["sprite color"] != null ){
             return s.data["sprite color"]
