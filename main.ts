@@ -18,10 +18,11 @@ namespace cuteColor{
     //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
     //% block "list of sprites with colors %colorNumberLists==variables_get(colorNumbersList) || of width %width and height %height"
-    export function colorsSpriteList( colorNumbersList: number[], width:number=8, height:number=8): Sprite[]{ 
-        let spriteList:Sprite[] = []
     // //% width.min=1 width.max=160 width.defl=16
     // //% height.min=1 height.max=140 height.defl=16
+    export function colorsSpriteList( colorNumbersList: number[], width:number=8, height:number=8): Sprite[]{ 
+        let spriteList:Sprite[] = []
+
         for (let i = 0; i < colorNumbersList.length; i++) {
             let newImage = image.create(width, height)
             newImage.fill(colorNumbersList[i])
