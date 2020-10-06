@@ -12,11 +12,11 @@ namespace cuteColor{
         return color
     }
     /**
-     * returns a sprit arrau of colors
+     * returns a sprit list with colors from a colors list
      */
     //% blockId=colorsSpriteArray
     //% blockSetVariable=mySpriteList
-    //% block "create sprites of width %width and height %height with colors %colorsList"
+    //% block "list of sprites of width %width and height %height with colors %colorsList"
     export function colorsSpriteArray(width:number=8, height:number=8, colorNumbers: number[]): Sprite[]{  // add excluded colors
         let spriteList:Sprite[] = []
         //let cs = new CuteColor()
@@ -32,7 +32,7 @@ namespace cuteColor{
         return spriteList
     }
     //% blockId=spriteColor
-    //% block="color of color sprite %mySprite"
+    //% block="color of color sprite %s=mySprite"
     export function spriteColor(s:Sprite):number {
         if(s.data["sprite color"] != null ){
             return s.data["sprite color"]
