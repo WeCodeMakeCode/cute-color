@@ -15,15 +15,25 @@ namespace cuteColor{
      * returns a sprit arrau of colors
      */
     //% blockId=spriteArray
+    //% blockSetVariable=mySprites
     //% block
     export function colorsSpriteArray(): Sprite[]{
         let s:Sprite[] = []
+        let cs = new CuteColor()
+        let colorNumbers = cs.colorNumbers
+        let newImage = image.create(8, 8)
+        for (let i = 0; i < colorNumbers.length; i++) {
+            newImage.fill(i)
+            let mySprite = sprites.create(newImage)
+            s.push(mySprite)
+        }
         return s
     }
     /**
      * returns a random color 0-15 excluding up to 3 colors
      */
     //% blockId=randomColor
+    //% blockSetVariable=myRandomColor
     //% block=" random color || excluding colors: %c1 %c2 %c3"
     //% inlineInputMode=inline
     export function randomColor(c1:number = -1, c2:number = -1, c3:number = -1): number{
@@ -33,6 +43,8 @@ namespace cuteColor{
         cs.excludeColorNumber(c3)
         return Math.pickRandom(cs.colorNumbers)
     }
+}
+//% blockNamespace=cuteColor
     class CuteColor{
         private _colorNames: string[] = []
         private _colorNumbers: number[] = []
@@ -88,5 +100,5 @@ namespace cuteColor{
         }
        
     }
-}
+
 
