@@ -17,7 +17,7 @@ namespace cuteColor{
      */
     //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
-    //% block "list of sprites with colors %colorNumberLists==variables_get(colorNumbersList) of width %width and height %height"
+    //% block "list of sprites with colors %colorNumberLists=variables_get(colorNumbersList) || of width %width and height %height"
     //% width.min=1 width.max=160 width.defl=16
     //% height.min=1 height.max=140 height.defl=16
     export function colorsSpriteList( colorNumbersList: number[], width:number, height:number): Sprite[]{ 
