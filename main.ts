@@ -16,17 +16,15 @@ namespace cuteColor{
      */
     //% blockId=colorsSpriteArray
     //% blockSetVariable=mySpriteList
-    //% block "list of sprites of width %width and height %height with colors %colorsList"
-    export function colorsSpriteArray(width:number=8, height:number=8, colorNumbers: number[]): Sprite[]{  // add excluded colors
+    //% block "list of sprites of width %width and height %height with colors %colorNumberLists"
+    export function colorsSpriteArray(width:number=8, height:number=8, colorNumberLists: number[]): Sprite[]{ 
         let spriteList:Sprite[] = []
-        //let cs = new CuteColor()
-        //let colorNumbers = cs.colorNumbers
         
-        for (let i = 0; i < colorNumbers.length; i++) {
+        for (let i = 0; i < colorNumberLists.length; i++) {
             let newImage = image.create(width, height)
-            newImage.fill(colorNumbers[i])
+            newImage.fill(colorNumberLists[i])
             let mySprite = sprites.create(newImage)
-            mySprite.data["sprite color"]=colorNumbers[i]
+            mySprite.data["sprite color"]=colorNumberLists[i]
             spriteList.push(mySprite)
         }
         return spriteList
