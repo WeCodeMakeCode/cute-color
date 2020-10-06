@@ -15,7 +15,7 @@ namespace cuteColor{
      * returns a sprit arrau of colors
      */
     //% blockId=colorsSpriteArray
-    //% blockSetVariable=mySprites
+    //% blockSetVariable=mySpriteList
     //% block "create sprites of width %width and height %height with colors %colorsList"
     export function colorsSpriteArray(width:number=8, height:number=8, colorNumbers: number[]): Sprite[]{  // add excluded colors
         let spriteList:Sprite[] = []
@@ -24,11 +24,19 @@ namespace cuteColor{
         
         for (let i = 0; i < colorNumbers.length; i++) {
             let newImage = image.create(width, height)
-            newImage.fill(i)
+            newImage.fill(colorNumbers[i])
             let mySprite = sprites.create(newImage)
+            mySprite.data["sprite color"]=colorNumbers[i]
             spriteList.push(mySprite)
         }
         return spriteList
+    }
+    //% blockId=spriteColor
+    //% block="color of color sprite %mySprite"
+    export function spriteColor(s:Sprite):number {
+        if(s.data["sprite color"] != null ){
+            return s.data["sprite color"]
+        } else return -1
     }
     /**
      * returns a random color 0-15 excluding up to 3 colors
