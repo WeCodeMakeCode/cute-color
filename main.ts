@@ -79,7 +79,7 @@ namespace cuteColor{
         return cs.colorNames[colorNumber]
     }
 }
-//% blockNamespace=cuteColor
+// //% blockNamespace=cuteColor
     class CuteColor{
         private _colorNames: string[] = []
         private _colorNumbers: number[] = []
