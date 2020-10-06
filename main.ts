@@ -14,10 +14,12 @@ namespace cuteColor{
     /**
      * returns a sprit list with colors from a colors list
      */
-    //% blockId=colorsSpriteArray
+    //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
-    //% block "list of sprites of width %width and height %height with colors %colorNumberLists"
-    export function colorsSpriteArray(width:number=8, height:number=8, colorNumberLists: number[]): Sprite[]{ 
+    //% block "list of sprites  with colors %colorNumberLists || of width %width and height %height"
+    //% width.min=1 width.max=160 width.defl=16
+    //% height.min=1 height.max=140 height.defl=16
+    export function colorsSpriteList(width:number=8, height:number=8, colorNumberLists: number[]): Sprite[]{ 
         let spriteList:Sprite[] = []
         
         for (let i = 0; i < colorNumberLists.length; i++) {
@@ -30,7 +32,7 @@ namespace cuteColor{
         return spriteList
     }
     //% blockId=spriteColor
-    //% block="color of color sprite %s=mySprite"
+    //% block="sprite color of sprite %s=mySprite"
     export function spriteColor(s:Sprite):number {
         if(s.data["sprite color"] != null ){
             return s.data["sprite color"]
