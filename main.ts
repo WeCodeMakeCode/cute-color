@@ -17,10 +17,10 @@ namespace cuteColor{
      */
     //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
-    //% block="sprites of width $width and height $height for colors %colors"
+    //% block="sprites for colors %colors of width $width and height $height"
     //% width.min=1 width.max=160 width.defl=16
     //% height.min=1 height.max=140 height.defl=16
-    export function colorsSpriteList( width:number, height:number, colors: number[]): Sprite[]{ 
+    export function colorsSpriteList(  colors: number[], width:number, height:number): Sprite[]{ 
         let spriteList:Sprite[] = []
 
         for (let i = 0; i < colors.length; i++) {
