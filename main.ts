@@ -1,11 +1,14 @@
     /**
      * todo
      */
-//% weight=100 color=#008080 
+//% weight=100 color=#008080
+//% groups=[ "Color", "List"]
 namespace cuteColor{
     /**
      * Returns selected color
      */
+
+    //% group=Color
     //% blockId=colorIndexPicker
     //% block="color %color"
     //% color.shadow="colorindexpicker"
@@ -15,6 +18,7 @@ namespace cuteColor{
     /**
      * returns a sprit list with colors from a colors list
      */
+    //% group=List
     //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
     //% block="sprites for colors %colors of width $width and height $height"
@@ -32,6 +36,7 @@ namespace cuteColor{
         }
         return spriteList
     }
+    //% group=Color
     //% blockId=spriteColor
     //% blockSetVariable=mySpriteColor
     //% block="sprite color of sprite %s=variables_get(myColorSprite)"
@@ -43,6 +48,7 @@ namespace cuteColor{
     /**
      * returns a random color 0-15 excluding up to 3 colors
      */
+    //% group=Color
     //% blockId=randomColor
     //% blockSetVariable=myRandomColor
     //% block="random color excluding colors: %c1 %c2 %c3"
@@ -54,6 +60,7 @@ namespace cuteColor{
         let cc = newCs(c1,c2,c3)
         return Math.pickRandom(cc.colorNumbers)
     }
+    //% group=List
     //% blockId=randomColorsList
     //% blockSetVariable=myRandomColorsList
     //% block="random colors list excluding colors: %c1 %c2 %c3"
@@ -72,6 +79,7 @@ namespace cuteColor{
         cc.excludeColorNumber(c3)
         return cc
     }
+    //% group=Color
     //% blockId=colorNumberFromName
     //% blockSetVariable=myColorNumber
     //% block "color number of color name %colorName"
@@ -79,6 +87,7 @@ namespace cuteColor{
         let cs = new CuteColor()
         return cs.colorNames.indexOf(colorName)
     }
+    //% group=Color
     //% blockId=colorNameFromNumber
     //% blockSetVariable=myColorName
     //% block "name of color number %colorNumber"
