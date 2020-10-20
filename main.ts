@@ -61,9 +61,9 @@ namespace cuteColor{
         return Math.pickRandom(cc.colorNumbers)
     }
     //% group=List
-    //% blockId=randomizeNumbers
-    //% blockSetVariable=myRandomColorsList
-    //% block="randomize numbers (e.g., colors) list %list"
+    //% blockId=randomizeNumbersList
+    //% blockSetVariable=myRandomizedList
+    //% block="randomize numbers list %list"
     export function randomize( list:number[]){
         // Fisher–Yates shuffle
         let n = list.length-1
