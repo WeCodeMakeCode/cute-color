@@ -45,20 +45,23 @@ namespace cuteColor{
      */
     //% blockId=randomColor
     //% blockSetVariable=myRandomColor
-    //% block="random color excluding colors || %c1 %c2 %c3"
-    //% c1.min=0 c1.max=15 c1.defl=null
-    //% c2.min=0 c2.max=15 c2.defl=null
-    //% c3.min=0 c3.max=15 c3.defl=null
+    //% block="random color || excluding colors: %c1 %c2 %c3"
+    //% c1.min=0 c1.max=15 c1.defl=0
+    //% c2.min=0 c2.max=15 c2.defl=0
+    //% c3.min=0 c3.max=15 c3.defl=0
     //% inlineInputMode=inline
-    export function randomColor(c1:number=null, c2:number=null, c3:number=null ): number{
+    export function randomColor(c1:number, c2:number, c3:number ): number{
         let cc = newCs(c1,c2,c3)
         return Math.pickRandom(cc.colorNumbers)
     }
     //% blockId=randomColorsList
     //% blockSetVariable=myRandomColorsList
     //% block="random colors list || excluding colors: %c1 %c2 %c3"
+    //% c1.min=0 c1.max=15 c1.defl=0
+    //% c2.min=0 c2.max=15 c2.defl=0
+    //% c3.min=0 c3.max=15 c3.defl=0
     //% inlineInputMode=inline
-    export function randomColorsList(c1:number = -1, c2:number = -1, c3:number = -1): number[]{
+    export function randomColorsList(c1:number, c2:number, c3:number): number[]{
         let cc = newCs(c1,c2,c3)
         return cc.colorNumbers
     }
