@@ -107,7 +107,6 @@ namespace cuteColor{
         constructor(){
             this._colorNames =["transparent","white","red","pink","orange","yellow","teal","green","blue","light blue","purple","light purple","dark purple","tan","brown","black"]
             this._colorNumbers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-            // do exclusions here
         }
         get colorNames(): string[] {
             return this._colorNames
@@ -123,7 +122,7 @@ namespace cuteColor{
             // Fisher–Yates shuffle
             let n = this._randomizedColors.length-1
             for (let i = 0; i < n - 1; i++) {
-                let j = randint(i, n-1)
+                let j = randint(i, n)
                 let tmp = this._randomizedColors[i]
                 this._randomizedColors[i] = this._randomizedColors[j]
                 this._randomizedColors[j] = tmp
