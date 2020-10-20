@@ -46,11 +46,11 @@ namespace cuteColor{
     //% blockId=randomColor
     //% blockSetVariable=myRandomColor
     //% block="random color excluding colors || %c1 %c2 %c3"
-    //% c1.min=-1 c1.max=15 c1.defl=-1
-    //% c2.min=-1 c2.max=15 c2.defl=-1
-    //% c3.min=-1 c3.max=15 c3.defl=-1
+    //% c1.min=0 c1.max=15 c1.defl=null
+    //% c2.min=0 c2.max=15 c2.defl=null
+    //% c3.min=0 c3.max=15 c3.defl=null
     //% inlineInputMode=inline
-    export function randomColor(c1:number, c2:number, c3:number ): number{
+    export function randomColor(c1:number=null, c2:number=null, c3:number=null ): number{
         let cc = newCs(c1,c2,c3)
         return Math.pickRandom(cc.colorNumbers)
     }
