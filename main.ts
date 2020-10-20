@@ -69,8 +69,11 @@ namespace cuteColor{
     //% c3.min=0 c3.max=15 c3.defl=0
     //% inlineInputMode=inline
     export function randomColorsList(c1:number, c2:number, c3:number): number[]{
-        let cc = newCs(c1,c2,c3)
-        return cc.colorNumbers
+        let cc = new CuteColor()
+        cc.excludeColorNumber(c1)
+        cc.excludeColorNumber(c2)
+        cc.excludeColorNumber(c3)
+        return cc.randomizedColorNumbers
     }
     function newCs(c1:number = -1, c2:number = -1, c3:number = -1): CuteColor{
         let cc = new CuteColor()
@@ -100,6 +103,7 @@ namespace cuteColor{
     class CuteColor{
         private _colorNames: string[] = []
         private _colorNumbers: number[] = []
+        private _randomizedColors: number[] = []
         constructor(){
             this._colorNames =["transparent","white","red","pink","orange","yellow","teal","green","blue","light blue","purple","light purple","dark purple","tan","brown","black"]
             this._colorNumbers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
@@ -112,8 +116,19 @@ namespace cuteColor{
             return this._colorNumbers
         }
         get randomizedColorNumbers(): number[] {
-            // TO DO 
-            return this._colorNumbers
+            // copy 
+            for (let i = 0; i < this._colorNumbers.length; i++) {
+                this._randomizedColors[i] = this._colorNumbers[i]
+            }
+            // Fisher–Yates shuffle
+            let n = this._randomizedColors.length-1
+            for (let i = 0; i < n - 1; i++) {
+                let j = randint(i, n-1)
+                let tmp = this._randomizedColors[i]
+                this._randomizedColors[i] = this._randomizedColors[j]
+                this._randomizedColors[j] = tmp
+            }
+            return this._randomizedColors
         }
         public excludeColorNumber(c:number): boolean {
             let i = this._colorNumbers.indexOf(c)
