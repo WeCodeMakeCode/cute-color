@@ -62,7 +62,6 @@ namespace cuteColor{
     }
     //% group=List
     //% blockId=randomizeNumbersList
-    //% blockSetVariable=myRandomizedList
     //% block="randomize numbers list %list"
     export function randomize( list:number[]){
         // Fisher–Yates shuffle
