@@ -46,8 +46,11 @@ namespace cuteColor{
     //% blockId=randomColor
     //% blockSetVariable=myRandomColor
     //% block="random color || excluding colors: %c1 %c2 %c3"
+    //% c1.min=-1 c1.max=15 c1.defl=-1
+    //% c2.min=-1 c2.max=15 c2.defl=-1
+    //% c3.min=-1 c3.max=15 c3.defl=-1
     //% inlineInputMode=inline
-    export function randomColor(c1:number = -1, c2:number = -1, c3:number = -1): number{
+    export function randomColor(c1:number, c2:number, c3:number ): number{
         let cc = newCs(c1,c2,c3)
         return Math.pickRandom(cc.colorNumbers)
     }
@@ -75,13 +78,13 @@ namespace cuteColor{
     }
     //% blockId=colorNameFromNumber
     //% blockSetVariable=myColorName
-    //% block "color name of color number %colorNumber"
+    //% block "name of color number %colorNumber"
     export function colorNameFromNumber(colorNumber:number):string {
         let cs = new CuteColor()
         return cs.colorNames[colorNumber]
     }
 }
-// //% blockNamespace=cuteColor
+    //% blockNamespace=cuteColor
     class CuteColor{
         private _colorNames: string[] = []
         private _colorNumbers: number[] = []
