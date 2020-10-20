@@ -61,14 +61,27 @@ namespace cuteColor{
         return Math.pickRandom(cc.colorNumbers)
     }
     //% group=List
-    //% blockId=randomColorsList
+    //% blockId=randomizeNumbers
     //% blockSetVariable=myRandomColorsList
-    //% block="random colors list excluding colors: %c1 %c2 %c3"
+    //% block="randomize numbers (e.g., colors) list %list"
+    export function randomize( list:number[]){
+        // Fisher–Yates shuffle
+        let n = list.length-1
+        for (let i = 0; i < n - 1; i++) {
+            let j = randint(i, n)
+            let tmp = list[i]
+            list[i] = list[j]
+            list[j] = tmp
+        }
+    }
+    //% group=List
+    //% blockId=colorNumberList
+    //% blockSetVariable=myColorNumbersList
+    //% block="color numbers list excluding colors: %c1 %c2 %c3"
     //% c1.min=0 c1.max=15 c1.defl=0
     //% c2.min=0 c2.max=15 c2.defl=0
     //% c3.min=0 c3.max=15 c3.defl=0
-    //% inlineInputMode=inline
-    export function randomColorsList(c1:number, c2:number, c3:number): number[]{
+    export function colorList(c1:number, c2:number, c3:number): number[]{
         let cc = new CuteColor()
         cc.excludeColorNumber(c1)
         cc.excludeColorNumber(c2)
