@@ -17,17 +17,17 @@ namespace cuteColor{
      */
     //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
-    //% block "list of sprites with colors %colorNumbersList(myColorsList) of width %width and height %height"
+    //% block "sprite list with colors %colors(myColorsList) of width %width and height %height"
     //% width.min=1 width.max=160 width.defl=16
     //% height.min=1 height.max=140 height.defl=16
-    export function colorsSpriteList( colorNumbersList: number[], width:number, height:number): Sprite[]{ 
+    export function colorsSpriteList( colors: number[], width:number, height:number): Sprite[]{ 
         let spriteList:Sprite[] = []
 
-        for (let i = 0; i < colorNumbersList.length; i++) {
+        for (let i = 0; i < colors.length; i++) {
             let newImage = image.create(width, height)
-            newImage.fill(colorNumbersList[i])
+            newImage.fill(colors[i])
             let mySprite = sprites.create(newImage)
-            mySprite.data["sprite color"]=colorNumbersList[i]
+            mySprite.data["sprite color"]=colors[i]
             spriteList.push(mySprite)
         }
         return spriteList
