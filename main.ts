@@ -45,7 +45,7 @@ namespace cuteColor{
      */
     //% blockId=randomColor
     //% blockSetVariable=myRandomColor
-    //% block="random color || excluding colors: %c1 %c2 %c3"
+    //% block="random color excluding colors: %c1 %c2 %c3"
     //% c1.min=0 c1.max=15 c1.defl=0
     //% c2.min=0 c2.max=15 c2.defl=0
     //% c3.min=0 c3.max=15 c3.defl=0
@@ -56,7 +56,7 @@ namespace cuteColor{
     }
     //% blockId=randomColorsList
     //% blockSetVariable=myRandomColorsList
-    //% block="random colors list || excluding colors: %c1 %c2 %c3"
+    //% block="random colors list excluding colors: %c1 %c2 %c3"
     //% c1.min=0 c1.max=15 c1.defl=0
     //% c2.min=0 c2.max=15 c2.defl=0
     //% c3.min=0 c3.max=15 c3.defl=0
