@@ -2,7 +2,7 @@
      * todo
      */
 //% weight=100 color=#008080
-//% groups=[ "Color", "List"]
+//% groups=[ "Color", "List", "Sprite"]
 namespace cuteColor{
     /**
      * Returns selected color
@@ -17,7 +17,7 @@ namespace cuteColor{
     /**
      * returns a sprit list with colors from a colors list
      */
-    //% group=List
+    //% group=Sprite
     //% blockId=colorsSpriteList
     //% blockSetVariable=mySpriteList
     //% block="sprites for colors %colors of width $width and height $height"
@@ -55,7 +55,7 @@ namespace cuteColor{
     //% c2.min=0 c2.max=15 c2.defl=0
     //% c3.min=0 c3.max=15 c3.defl=0
     export function randomColor(c1:number, c2:number, c3:number ): number{
-        let cc = newCs(c1,c2,c3)
+        let cc = newCC(c1,c2,c3)
         return Math.pickRandom(cc.colorNumbers)
     }
     //% group=List
@@ -85,7 +85,7 @@ namespace cuteColor{
         cc.excludeColorNumber(c3)
         return cc.colorNumbers
     }
-    function newCs(c1:number = -1, c2:number = -1, c3:number = -1): CuteColor{
+    function newCC(c1:number = -1, c2:number = -1, c3:number = -1): CuteColor{
         let cc = new CuteColor()
         cc.excludeColorNumber(c1)
         cc.excludeColorNumber(c2)
